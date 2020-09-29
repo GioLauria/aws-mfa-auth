@@ -1,7 +1,6 @@
 # recommended version >= 3.8
 import os
 import subprocess 
-import binascii
 from os import system as myConsole
 operating_system=os.name
 new_profile_name=""
@@ -142,7 +141,6 @@ if FOUND_ACCOUNT:
                 AWS_SECRET_ACCESS_KEY=("".join(mfaContent[3]))
                 AWS_SESSION_TOKEN=("".join(mfaContent[4])).rstrip("\n").rstrip("\r")
                 AWS_SECURITY_TOKEN=("".join(mfaContent[4])).rstrip("\n").rstrip("\r")
-                #sessionName=binascii.b2a_hex(os.urandom(15)).decode('utf-8')
                 sessionName="training-" + aws_username
                 UpdateCredentialsFile(credentials_file,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_SESSION_TOKEN,AWS_SESSION_EXPIRATION)         
                 AssumeRole("arn:aws:iam::661315133784:role/AdministratorAccess",sessionName,new_profile_name)       
