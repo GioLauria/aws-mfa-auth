@@ -15,7 +15,7 @@ aws_username="giovanni.lauria"
 MAX_MFA_LOOPS=3
 MAX_ACCOUNT_LOOPS=3
 ACCOUNT_NUMBER = [
-    "865986445429      [docomo-ops-master]",
+    "865986445429      [dodi-login]",
     "794147387117      [docomo-digital]"
 ]
 FOUND_SERIAL = False
