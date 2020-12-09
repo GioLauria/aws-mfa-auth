@@ -41,16 +41,16 @@ def UpdateCredentialsFile(credentials_file,_AWS_ACCESS_KEY_ID,_AWS_SECRET_ACCESS
             list_of_lines.insert(lineCounter,"["+ new_profile_name +"]\n")
             lineCounter=lineCounter+1   # since this line is written only if it has not found
             # we need to increment the pointer as we will have 1 more line
-            list_of_lines.insert(lineCounter,"aws_access_key_id="+_AWS_ACCESS_KEY_ID +"\n")            
-            list_of_lines.insert(lineCounter+1,"aws_secret_access_key="+_AWS_SECRET_ACCESS_KEY +"\n") 
-            list_of_lines.insert(lineCounter+2,"aws_session_token="+_AWS_SESSION_TOKEN +"\n") 
-            list_of_lines.insert(lineCounter+3,"aws_session_expiration="+_AWS_SESSION_EXPIRATION +"\n") 
+            list_of_lines.insert(lineCounter,"aws_access_key_id = "+_AWS_ACCESS_KEY_ID +"\n")            
+            list_of_lines.insert(lineCounter+1,"aws_secret_access_key = "+_AWS_SECRET_ACCESS_KEY +"\n") 
+            list_of_lines.insert(lineCounter+2,"aws_session_token = "+_AWS_SESSION_TOKEN +"\n") 
+            list_of_lines.insert(lineCounter+3,"aws_session_expiration = "+_AWS_SESSION_EXPIRATION +"\n") 
             myFile.writelines(list_of_lines)    # modify the list and write to file the whole list
         else:
-            list_of_lines[lineCounter]="aws_access_key_id="+_AWS_ACCESS_KEY_ID +"\n"           
-            list_of_lines[lineCounter+1]="aws_secret_access_key="+_AWS_SECRET_ACCESS_KEY +"\n"
-            list_of_lines[lineCounter+2]="aws_session_token="+_AWS_SESSION_TOKEN +"\n"
-            list_of_lines[lineCounter+3]="aws_session_expiration="+_AWS_SESSION_EXPIRATION +"\n" 
+            list_of_lines[lineCounter]="aws_access_key_id = "+_AWS_ACCESS_KEY_ID +"\n"           
+            list_of_lines[lineCounter+1]="aws_secret_access_key = "+_AWS_SECRET_ACCESS_KEY +"\n"
+            list_of_lines[lineCounter+2]="aws_session_token = "+_AWS_SESSION_TOKEN +"\n"
+            list_of_lines[lineCounter+3]="aws_session_expiration = "+_AWS_SESSION_EXPIRATION +"\n" 
             myFile.writelines(list_of_lines)    # modify the list and write to file the whole list
 
     myFile.close()
