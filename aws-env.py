@@ -81,9 +81,12 @@ while not FOUND_ACCOUNT and len(myAccount)!=12 and counter_while_len<3:
             print(str(retry_account) + " retries missing")
 if FOUND_ACCOUNT:
     my_user_path = os.path.expanduser("~")
-    credentials_file = my_user_path + '\\.aws\\credentials'
-    config_file=my_user_path + '\\.aws\\config'
-
+    if os.name == "posix":
+        _folder_separator="/"
+    else:
+        _folder_separator="\\"
+    credentials_file = my_user_path + _folder_separator + '.aws' + _folder_separator + 'credentials'
+    config_file=my_user_path + _folder_separator + '.aws' + _folder_separator + 'config'
     print ("Profiles Available on " + credentials_file + ":")
     with open(credentials_file, 'r') as myFile:
         for myLine in myFile:
