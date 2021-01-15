@@ -149,8 +149,10 @@ if FOUND_ACCOUNT:
                 #AssumeRole("arn:aws:iam::661315133784:role/AdministratorAccess",sessionName,new_profile_name)       
                 print("\nTemporary credentials set " + AWS_ACCESS_KEY_ID +" until " + AWS_SESSION_EXPIRATION)
                 if os.name == "posix":
-                    os.environ['AWS_ACCESS_KEY_ID']=AWS_ACCESS_KEY_ID
-                    os.environ['AWS_SECRET_ACCESS_KEY']=AWS_SECRET_ACCESS_KEY
+                    os.system('sed -i \'/AWS/d\' ~/.bashrc')  ## remove lines with AWS string in it
+                    os.system('bash -c \'echo "export AWS_ACCESS_KEY_ID='+ AWS_ACCESS_KEY_ID +'" >> ~/.bashrc\'')
+                    os.system('bash -c \'echo "export AWS_SECRET_ACCESS_KEY='+ AWS_SECRET_ACCESS_KEY  +'" >> ~/.bashrc\'')
+                    os.system('exec bash')
             else:
                 print ("Error while connecting with MFA")
 elif (not FOUND_ACCOUNT):
