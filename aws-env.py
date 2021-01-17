@@ -152,6 +152,9 @@ if FOUND_ACCOUNT:
                     os.system('sed -i \'/AWS/d\' ~/.bashrc')  ## remove lines with AWS string in it
                     os.system('bash -c \'echo "export AWS_ACCESS_KEY_ID='+ AWS_ACCESS_KEY_ID +'" >> ~/.bashrc\'')
                     os.system('bash -c \'echo "export AWS_SECRET_ACCESS_KEY='+ AWS_SECRET_ACCESS_KEY  +'" >> ~/.bashrc\'')
+                    os.system('bash -c \'echo "export AWS_SESSION_EXPIRATION='+ AWS_SESSION_EXPIRATION  +'" >> ~/.bashrc\'')
+                    os.system('bash -c \'echo "export AWS_SESSION_TOKEN='+ AWS_SESSION_TOKEN  +'" >> ~/.bashrc\'')
+                    os.system('bash -c \'echo "export AWS_SECURITY_TOKEN='+ AWS_SECURITY_TOKEN  +'" >> ~/.bashrc\'')
                     os.system('exec bash')
             else:
                 print ("Error while connecting with MFA")
