@@ -156,6 +156,10 @@ if FOUND_ACCOUNT:
                     os.system('bash -c \'echo "export AWS_SESSION_TOKEN='+ AWS_SESSION_TOKEN  +'" >> ~/.bashrc\'')
                     os.system('bash -c \'echo "export AWS_SECURITY_TOKEN='+ AWS_SECURITY_TOKEN  +'" >> ~/.bashrc\'')
                     os.system('exec bash')
+                else:
+                    print ("We are non Windows")
+                    print ("Need to work this out")
+
             else:
                 print ("Error while connecting with MFA")
 elif (not FOUND_ACCOUNT):
