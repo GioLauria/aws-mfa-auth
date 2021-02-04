@@ -157,7 +157,7 @@ if FOUND_ACCOUNT:
                     os.system('bash -c \'echo "export AWS_SECURITY_TOKEN='+ AWS_SECURITY_TOKEN  +'" >> ~/.bashrc\'')
                     os.system('exec bash')
                 else:
-                    print ("We are non Windows")
+                    print ("We are on Windows")
                     print ("Need to work this out")
 
             else:
