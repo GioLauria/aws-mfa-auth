@@ -4,7 +4,7 @@ This is a python script used to create sts token to aws
 
 ## Installation
 Clone the repository with 
-git clone https://bitbucket-01.dodi.io/scm/bckp/aws-env.git
+git clone git@bitbucket.org:docomo-digital/aws_env.git
 
 ```bash
 aws-env.py
