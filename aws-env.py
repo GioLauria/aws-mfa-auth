@@ -157,9 +157,11 @@ if FOUND_ACCOUNT:
                     os.system('bash -c \'echo "export AWS_SECURITY_TOKEN='+ AWS_SECURITY_TOKEN  +'" >> ~/.bashrc\'')
                     os.system('exec bash')
                 else:
-                    print ("We are on Windows")
-                    print ("Need to work this out")
-
+                    subprocess.call(['setx.exe', 'AWS_ACCESS_KEY_ID',AWS_ACCESS_KEY_ID])
+                    subprocess.call(['setx.exe', 'AWS_SECRET_ACCESS_KEY',AWS_SECRET_ACCESS_KEY])
+                    subprocess.call(['setx.exe', 'AWS_SESSION_EXPIRATION',AWS_SESSION_EXPIRATION])
+                    subprocess.call(['setx.exe', 'AWS_SESSION_TOKEN',AWS_SESSION_TOKEN])
+                    subprocess.call(['setx.exe', 'AWS_SECURITY_TOKEN',AWS_SECURITY_TOKEN])
             else:
                 print ("Error while connecting with MFA")
 elif (not FOUND_ACCOUNT):
