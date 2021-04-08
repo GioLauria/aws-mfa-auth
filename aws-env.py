@@ -2,6 +2,8 @@
 import os
 import subprocess 
 from os import system as myConsole
+from datetime import date
+today = date.today()
 operating_system=os.name
 new_profile_name=""
 mfaToken=""
@@ -157,11 +159,12 @@ if FOUND_ACCOUNT:
                     os.system('bash -c \'echo "export AWS_SECURITY_TOKEN='+ AWS_SECURITY_TOKEN  +'" >> ~/.bashrc\'')
                     os.system('exec bash')
                 else:
-                    subprocess.call(['setx.exe', 'AWS_ACCESS_KEY_ID',AWS_ACCESS_KEY_ID])
-                    subprocess.call(['setx.exe', 'AWS_SECRET_ACCESS_KEY',AWS_SECRET_ACCESS_KEY])
-                    subprocess.call(['setx.exe', 'AWS_SESSION_EXPIRATION',AWS_SESSION_EXPIRATION])
-                    subprocess.call(['setx.exe', 'AWS_SESSION_TOKEN',AWS_SESSION_TOKEN])
-                    subprocess.call(['setx.exe', 'AWS_SECURITY_TOKEN',AWS_SECURITY_TOKEN])
+                    os.system("SETX {0} {1} /M".format("AWS_ACCESS_KEY_ID", AWS_ACCESS_KEY_ID))
+                    os.system("SETX {0} {1} /M".format("AWS_SECRET_ACCESS_KEY", AWS_SECRET_ACCESS_KEY))
+                    os.system("SETX {0} {1} /M".format("AWS_SESSION_EXPIRATION", AWS_SESSION_EXPIRATION))
+                    os.system("SETX {0} {1} /M".format("AWS_SESSION_TOKEN", AWS_SESSION_TOKEN))
+                    os.system("SETX {0} {1} /M".format("AWS_SECURITY_TOKEN", AWS_SECURITY_TOKEN))
+                    print ("Keys are saved. Remember to open a new console session to start using the new values.")
             else:
                 print ("Error while connecting with MFA")
 elif (not FOUND_ACCOUNT):
