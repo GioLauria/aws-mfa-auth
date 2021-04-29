@@ -10,7 +10,7 @@ mfaContent=""
 myAccount=""
 mySerial=""
 profile_nane=""
-sts_seconds="28800"
+sts_seconds="36000"
 aws_username="giovanni.lauria"
 
 MAX_MFA_LOOPS=3
