@@ -163,7 +163,7 @@ if FOUND_ACCOUNT:
                     os.system("SETX {0} {1} /M".format("AWS_SESSION_EXPIRATION", AWS_SESSION_EXPIRATION))
                     os.system("SETX {0} {1} /M".format("AWS_SESSION_TOKEN", AWS_SESSION_TOKEN))
                     os.system("SETX {0} {1} /M".format("AWS_SECURITY_TOKEN", AWS_SECURITY_TOKEN))
-                    print ("Keys are saved. Happy Coding!!!")
+                    print ("Keys are saved. If using within an IDE Terminal, restart the IDE. Happy Coding!!!")
             else:
                 print ("Error while connecting with MFA")
 elif (not FOUND_ACCOUNT):
